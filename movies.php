@@ -4,6 +4,8 @@ $username = "user";
 $password = "password";
 $dbname = "databasename";
 
+// https://t.me/syndic4te
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -141,6 +143,9 @@ $total_pages = ceil($total_result['total'] / $items_per_page);
                 })
                 .catch(error => console.error('Error:', error));
         }
+		
+	
+		// https://t.me/syndic4te
 
         // Initial load
         searchMovies();

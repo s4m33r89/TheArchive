@@ -4,12 +4,14 @@ $username = "user";
 $password = "password";
 $dbname = "databasename";
 
+// https://t.me/syndic4te
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+ 
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $items_per_page = 100;
@@ -25,6 +27,8 @@ $result = $stmt->get_result();
 $total_result = $conn->query("SELECT COUNT(*) AS total FROM tv_series WHERE title LIKE '$search_term'")->fetch_assoc();
 $total_pages = ceil($total_result['total'] / $items_per_page);
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -141,7 +145,7 @@ $total_pages = ceil($total_result['total'] / $items_per_page);
                 })
                 .catch(error => console.error('Error:', error));
         }
-
+          // https://t.me/syndic4te
         // Initial load
         searchTVSeries();
     </script>
